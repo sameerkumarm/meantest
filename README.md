@@ -1,7 +1,7 @@
 
 
-# hubgrouptest
-
+# meantest
+Simple CRUD operations service layer using nodejs
 
 
 ## Usage
