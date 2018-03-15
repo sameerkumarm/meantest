@@ -1,16 +1,19 @@
 import express from 'express';
-//import controller file
-import * as locationcontroller from '../controllers/locationcontroller';
+//import services
+import {getSSIs, getSSI} from '../retriveservice';
+import addSSI from '../createservice';
+import updateSSI from '../updateservice';
+import deleteSSI from '../deleteservice';
 
 const router = express.Router();
 
 router.route('/')
-.get(locationcontroller.getLocations)
-.post(locationcontroller.addLocation)
-.put(locationcontroller.updateLocation);
+	.get(getSSIs)
+	.post(addSSI)
+	.put(updateSSI);
 
 router.route('/:id')
- .get(locationcontroller.getLocation)
- .delete(locationcontroller.deleteLocation);
+	.get(getSSI)
+	.delete(deleteSSI);
 
 export default router;
